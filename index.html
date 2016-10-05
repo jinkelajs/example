@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="jinkela" content="auto=true" />
+  <script src="//cdn.jsdelivr.net/npm/jinkela@1.3.5/umd.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/highlightjs@9.10.0/styles/color-brewer.min.css" />
+  <script src="//cdn.jsdelivr.net/npm/highlightjs@9.10.0/highlight.pack.min.js"></script>
+  <script src="example.js"></script>
+  <title>Example</title>
+</head>
+<body>
+  <div demo="Basic Usage">
+    <script>
+    class MyDemo extends Jinkela {
+      init() {
+        this.who = 'Jinkela';
+      }
+      get template() {
+        return `
+          <div>
+            Hello <span>{who}</span>
+          </div>
+        `;
+      }
+      get styleSheet() {
+        return `
+          :scope {
+            font-weight: bold;
+            > span { color: red; }
+          }
+        `;
+      }
+    }
+    </script>
+    <jkl-my-demo></jkl-my-demo>
+  </div>
+  <table demo="Built-in Properties">
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>init</td>
+      <td>Initial callback function</td>
+    </tr>
+    <tr>
+      <td>template</td>
+      <td>The html string template of component</td>
+    </tr>
+    <tr>
+      <td>styleSheet</td>
+      <td>The style sheet string template of component</td>
+    </tr>
+  </table>
+</body>
+</html>
